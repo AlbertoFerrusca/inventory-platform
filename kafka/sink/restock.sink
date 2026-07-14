@@ -1,0 +1,30 @@
+cat <<EOF | curl -X POST http://localhost:8084/connectors \
+-H "Content-Type: application/json" \
+-d '{
+  "name": "postgres-productos-sink",
+  "config": {
+    "connector.class": "io.debezium.connector.jdbc.JdbcSinkConnector",
+    "topics": "PRODUCTOS_KAFKA_TABLE_SR",
+
+    "connection.url": "jdbc:postgresql://host.docker.internal:5432/postgres",
+    "connection.username": "$DB_USER",
+    "connection.password": "$DB_PASSWORD",
+    "connection.driver": "org.postgresql.Driver",
+
+    "table.name.format": "productos_kafka_test",
+
+    "insert.mode": "insert",
+
+    "auto.create": "false",
+    "auto.evolve": "false",
+
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+   
+     "value.converter": "io.confluent.connect.json.JsonSchemaConverter",
+    "value.converter.schema.registry.url": "http://schema-registry:8081",
+    
+
+    "tasks.max": "1"
+  }
+}'
+EOF
