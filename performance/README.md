@@ -6,6 +6,14 @@
 
 This section contains the performance testing assets and results used to validate the inventory platform under concurrent load conditions.
 
+## Conclusion
+
+The platform successfully processed 158,085 transactions during the performance test execution.
+Kafka consumers, Python processing services, PostgreSQL operations, and batch jobs completed the workload without leaving pending records.
+The messaging queue was fully drained, and all transactions reached the PROCESADO state, demonstrating the platform's ability to sustain the configured workload and successfully complete end-to-end processing.
+
+
+
 ## Scope
 
 The tests validate the following components:
