@@ -12,6 +12,7 @@ The solution supports inventory management, batch processing, analytics generati
 
 ## Architecture
 
+```text
 Postman / Clients
 
 │
@@ -54,6 +55,7 @@ Sink Connectors6
 ├── Reporting Databases
 |-- Statistics Repositories
 └── External Environments
+```
 
 ## Technologies
 - PostgreSQL
