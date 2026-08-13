@@ -25,7 +25,7 @@ Microservices
 Queue
 │
 ▼
-Python Processing2
+Python Processing
 │
 ▼
 PostgreSQL
@@ -43,15 +43,15 @@ CDC
 Kafka Topics
 │
 ▼
-Kafka Streams0
+Kafka Streams
 │
 ▼
-State Stores3
+State Stores
 │
 ▼
-Sink Connectors6
+Sink Connectors
 │
-├── Analytics Databases8
+├── Analytics Databases
 ├── Reporting Databases
 |-- Statistics Repositories
 └── External Environments
