@@ -1,4 +1,7 @@
 ## Architecture Overview
+
+## Overview
+
 The Inventory Platform is an event-driven and service-oriented solution designed to manage inventory operations, product distribution, business transactions, and cross-environment data integration.
 
 The platform combines synchronous microservices, asynchronous event processing, PostgreSQL persistence, Python processing services, and Kafka-based integrations to support operational and analytical workloads.
@@ -6,6 +9,8 @@ The platform combines synchronous microservices, asynchronous event processing, 
 Inventory data is maintained and distributed by state, region, and branch. Database changes are captured through Change Data Capture (CDC) mechanisms and published to Kafka topics, enabling real-time processing, aggregation, and information sharing across multiple environments.
 
 The solution supports inventory management, batch processing, analytics generation, and external system integrations while maintaining scalability, traceability, and operational reliability.
+
+## Architecture
 
 Postman / Clients
 
