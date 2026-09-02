@@ -1,6 +1,7 @@
 cat <<EOF | curl -X POST http://localhost:8084/connectors \
 -H "Content-Type: application/json" \
--d '{
+-d @- 
+{
   "name": "postgres-productos-sink",
   "config": {
     "connector.class": "io.debezium.connector.jdbc.JdbcSinkConnector",
@@ -26,5 +27,5 @@ cat <<EOF | curl -X POST http://localhost:8084/connectors \
 
     "tasks.max": "1"
   }
-}'
+}
 EOF
