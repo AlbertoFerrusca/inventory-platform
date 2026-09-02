@@ -29,7 +29,7 @@ Python workers are executed in the background through shell scripts and can be s
 
 - Python
 - RabbitMQ
-- SQL Server / Relational Database
+- Postgress SQL / Relational Database
 - Shell Scripting
 - Stored Procedures
 
