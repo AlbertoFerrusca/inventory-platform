@@ -94,6 +94,50 @@ Databases  Databases  Repositories
 
 ```
 
+## Components
+
+### Inventory Service
+
+Responsible for inventory management, stock movements, product availability, and inventory-related business operations. The service exposes synchronous REST APIs and publishes business events through RabbitMQ.
+
+### Payments Service
+
+Handles payment processing and transaction workflows. The service supports both synchronous communication and asynchronous event publishing through RabbitMQ.
+
+### RabbitMQ
+
+Acts as the messaging backbone between microservices and asynchronous processing components, enabling loose coupling and event-driven communication.
+
+### Python Workers
+
+Background processes (`eventos.py`, `ordenesii.py`, and `payment.py`) responsible for consuming RabbitMQ messages, executing business logic, and invoking database procedures and functions.
+
+### PostgreSQL
+
+Central persistence layer containing operational tables, views, functions, procedures, and batch processing components.
+
+ 
+### CDC (Change Data Capture)
+
+Captures database changes in real time and publishes them to Kafka topics, eliminating the need for direct polling mechanisms.
+
+### Apache Kafka
+
+Serves as the event streaming platform that distributes data changes across the ecosystem.
+
+ 
+### Kafka Streams & KTables
+
+Provides stream processing, enrichment, aggregation, and stateful event management through State Stores.
+
+### Kafka Event Router (Apache Camel)
+
+Consumes Kafka topics and distributes events across multiple independent destinations using parallel processing, SEDA queues, Circuit Breakers, and DLQ strategies.
+
+### External Systems
+
+Analytical platforms, reporting systems, statistical repositories, and third-party integrations that consume processed business events.
+
 ## Technologies
 - Java 21
 - Spring Boot
