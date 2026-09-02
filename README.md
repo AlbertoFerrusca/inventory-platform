@@ -138,7 +138,19 @@ Consumes Kafka topics and distributes events across multiple independent destina
 
 Analytical platforms, reporting systems, statistical repositories, and third-party integrations that consume processed business events.
 
-## Technologies
+## Event Flow
+
+1. Clients interact with Inventory and Payments services.
+2. Business events are published to RabbitMQ.
+3. Python workers consume and process events.
+4. Database procedures update PostgreSQL.
+5. CDC captures database changes.
+6. Changes are published to Kafka.
+7. Kafka Streams enriches and aggregates data.
+8. Apache Camel routes events to downstream systems.
+9. Sink Connectors distribute information to analytical and external environments.
+
+## Technology Stack
 - Java 21
 - Spring Boot
 - PostgreSQL
